@@ -50,29 +50,33 @@ $MensajeNavidad = array(
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/snow.css" rel="stylesheet">
 </head>
 
 <body>
+
   <!-- ======= Hero Section ======= -->
   <section id="hero">
-    <div class="container">
-      <div class="content">
-        <div class="row justify-content-between">
-          <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center text-white">
-            <div data-aos="zoom-out">
-              <h1><?php echo $MensajeNavidad[$DiaActual]; ?></h1>
-              <div class="text-center text-lg-start">
-                <br>
-                <a class="btn btn-success" href="javascript:cerrar();">Clic para Cerrar mensaje o Alt + F4</a>
+    <main class="main-container">
+      <div class="container">
+        <div class="content">
+          <div class="row justify-content-between">
+            <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center text-white">
+              <div data-aos="zoom-out">
+                <h1><?php echo $MensajeNavidad[$DiaActual]; ?></h1>
+                <div class="text-center text-lg-start">
+                  <br>
+                  <a class="btn btn-success" href="javascript:cerrar();">Clic para Cerrar mensaje o Alt + F4</a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-4 order-1 order-lg-2 hero-img text-white" data-aos="zoom-out" data-aos-delay="300">
-            <img src="assets/img/pic-<?php echo $DiaActual; ?>.png" class="img-fluid animated" alt="">
+            <div class="col-lg-4 order-1 order-lg-2 hero-img text-white" data-aos="zoom-out" data-aos-delay="300">
+              <img src="assets/img/pic-<?php echo $DiaActual; ?>.png" class="img-fluid animated" alt="">
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   </section>
   <!-- End Hero -->
 
@@ -86,16 +90,16 @@ $MensajeNavidad = array(
   </footer>
   <!-- FINISH FOOTER -->
 
-
   <!-- Vendor JS Files -->
-<script>
-   document.documentElement.requestFullscreen();
- </script>
+  <script>
+    document.documentElement.requestFullscreen();
+  </script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/snow.js"></script>
   <script src="assets/js/jquery-3.6.0.js"></script>
 
   <script language="javascript" type="text/javascript">
