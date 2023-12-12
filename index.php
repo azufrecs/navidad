@@ -63,7 +63,7 @@ $MensajeNavidad = array(
               <h1><?php echo $MensajeNavidad[$DiaActual]; ?></h1>
               <div class="text-center text-lg-start">
                 <br>
-                <a class="btn btn-success" href="javascript:cerrar();">Cerrar mensaje</a>
+                <a class="btn btn-success" href="javascript:cerrar();">Clic para Cerrar mensaje o Alt + F4</a>
               </div>
             </div>
           </div>
@@ -76,12 +76,11 @@ $MensajeNavidad = array(
   </section>
   <!-- End Hero -->
 
-
   <!-- BEGIN FOOTER -->
   <footer>
     <div align="center">
       <div align="center" class="display-6 text-white">
-        <p class="h3">Muchas felicidades le desea <i>UAASS Camag&uuml;ey</p>
+        <p class="h3">Muchas felicidades le desea <i>SMC Camag&uuml;ey</p>
         <div>
         </div>
   </footer>
@@ -89,14 +88,15 @@ $MensajeNavidad = array(
 
 
   <!-- Vendor JS Files -->
-
+<script>
+   document.documentElement.requestFullscreen();
+ </script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/jquery-3.6.0.js"></script>
-
 
   <script language="javascript" type="text/javascript">
     function cerrar() {

@@ -246,5 +246,5 @@ h6 {
 
 /* FOOTER SIEMPRE ABAJO Y SIN SUPERPONERSE */
 	* 					{margin:0;padding:0;}
-	.content 			{min-height: calc(100vh - 170px);/* 20px header + 10px footer = 120px  */}
+	.content 			{min-height: calc(100vh - 165px);/* 20px header + 10px footer = 120px  */}
 	footer 				{height:5px;}
