@@ -1,4 +1,3 @@
-const treeContainer = document.createElement("pre");
 const mainContainer = document.querySelector(".main-container");
 
 const createTree = (size) => {
