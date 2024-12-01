@@ -1,5 +1,5 @@
 <?php
-$DiaActual = date('d', time());
+$DiaActual = date('j', time());
 $MensajeNavidad = array(
 	"",
 	"A partir de hoy y durante este mes recibirás mensajes especiales, dedicados a ti, para que este año culmine lleno de alegría y recibas el próximo lleno de amor y felicidad.",
