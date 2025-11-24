@@ -114,6 +114,14 @@ $MensajeNavidad = array(
 			sonido.play();
 			sonido.volume = 0.1;
 		});
+		
+		function cerrarAutomaticamente() {
+    setTimeout(function() {
+        window.opener.location.href = '#';
+    }, 10000); // 10 segundos en milisegundos
+}
+
+document.addEventListener('DOMContentLoaded', cerrarAutomaticamente);
 	</script>
 </body>
 
