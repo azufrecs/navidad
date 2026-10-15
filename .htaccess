@@ -1,0 +1,51 @@
+# Disable directory browsing
+Options All -Indexes
+
+# Bloquear acceso a cualquier archivo que comience con un punto
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Bloquear específicamente el directorio .git si existe
+RedirectMatch 404 /\.git
+
+# ============================================================
+# CAPA 1 DE SEGURIDAD  (estandar - no borrar)
+# Bloquea ficheros que NUNCA son recursos de una pagina:
+# documentacion, datos, logs, codigo fuente y secretos.
+# Comprobado: ningun sitio enlaza .md .txt .json .csv .map ni
+# .log por HTTP, asi que bloquearlos no rompe nada.
+# Documentacion, logs y metadatos de desarrollo
+<FilesMatch "(?i)\.(md|markdown|txt|log|json|jsonl|yml|yaml|dist|editorconfig|npmignore|lock|map|ts|mts|cts|neon|gyp|ser|rev|idx|pack|in|out|bak|old|orig|swp)$">
+    Require all denied
+</FilesMatch>
+
+# Datos, bases de datos y scripts ejecutables
+<FilesMatch "(?i)\.(csv|sql|db|sqlite|sh|ps1|bat|cmd|vbs|cgi|pl)$">
+    Require all denied
+</FilesMatch>
+
+# Secretos y configuracion sensible
+<FilesMatch "(?i)(\.env|\.ini|\.conf|\.htpasswd|\.key|\.pem|\.crt|\.cer|\.csr|\.p12|\.pfx)$">
+    Require all denied
+</FilesMatch>
+
+# ============================================================
+# PAGINA DE ERROR PERSONALIZADA
+# El 404 usa mod_rewrite con ruta RELATIVA, que resuelve
+# al error.php de este mismo directorio: por eso sirve igual
+# en localhost/navidad que en navidad.dominio.tld
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ error.php?code=404 [L,QSA]
+ErrorDocument 400 /error.php?code=400
+ErrorDocument 401 /error.php?code=401
+ErrorDocument 403 /error.php?code=403
+ErrorDocument 404 /error.php?code=404
+ErrorDocument 405 /error.php?code=405
+ErrorDocument 500 /error.php?code=500
+ErrorDocument 502 /error.php?code=502
+ErrorDocument 503 /error.php?code=503
+ErrorDocument 504 /error.php?code=504
